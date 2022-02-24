@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ContinentAdapter extends RecyclerView.Adapter<ContinentAdapter.ContinentViewHolder> {
+public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ContinentViewHolder> {
     private ArrayList<com.example.hw5.ImageView> continents;
     private OnClickListener onClickListener;
 
-    public ContinentAdapter(ArrayList<com.example.hw5.ImageView> continents,OnClickListener onClickListener) {
+    public CommonAdapter(ArrayList<com.example.hw5.ImageView> continents, OnClickListener onClickListener) {
         this.continents = continents;
         this.onClickListener=onClickListener;
     }

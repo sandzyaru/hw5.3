@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class CountryFragment extends Fragment implements OnClickListener{
     private RecyclerView recyclerView;
     private ArrayList<ImageView> imageViews;
-    private CountryAdapter countryAdapter;
+    private CommonAdapter countryAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class CountryFragment extends Fragment implements OnClickListener{
         super.onViewCreated(view, savedInstanceState);
         LoadData();
         recyclerView = view.findViewById(R.id.recycler_country);
-        countryAdapter = new CountryAdapter(imageViews, this::onClick);
+        countryAdapter = new CommonAdapter(imageViews, this::onClick);
         recyclerView.setAdapter(countryAdapter);
 
     }

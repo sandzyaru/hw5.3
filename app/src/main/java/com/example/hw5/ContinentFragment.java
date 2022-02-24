@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class ContinentFragment extends Fragment implements OnClickListener {
     private RecyclerView recyclerView;
     private ArrayList<ImageView> imageViews;
-    private ContinentAdapter continentAdapter;
+    private CommonAdapter continentAdapter;
     public final static String KEY_INTENT="key";
 
     @Override
@@ -33,7 +33,7 @@ public class ContinentFragment extends Fragment implements OnClickListener {
         super.onViewCreated(view, savedInstanceState);
         LoadData();
         recyclerView=view.findViewById(R.id.recycler_continent);
-        continentAdapter = new ContinentAdapter(imageViews, this::onClick);
+        continentAdapter = new CommonAdapter(imageViews, this::onClick);
         recyclerView.setAdapter(continentAdapter);
     }
 
@@ -46,12 +46,10 @@ public class ContinentFragment extends Fragment implements OnClickListener {
         imageViews.add(new ImageView(R.drawable.ic_europe,4));
         imageViews.add(new ImageView(R.drawable.ic_north_america,5));
         imageViews.add(new ImageView(R.drawable.ic_south_america,6));
-
     }
     @Override
     public void onClick(ImageView imageView) {
         Bundle bundle = new Bundle();
-        //bundle.putInt(getString(KEY_INTENT, imageView.getKeyId());
         bundle.putInt("key",imageView.getKeyId());
         Fragment fragment = new CountryFragment();
         fragment.setArguments(bundle);
