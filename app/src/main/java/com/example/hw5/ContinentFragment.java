@@ -1,13 +1,11 @@
 package com.example.hw5;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -42,18 +40,19 @@ public class ContinentFragment extends Fragment implements OnClickListener {
 
     private void LoadData() {
         imageViews=new ArrayList<>();
-        imageViews.add(new ImageView(R.drawable.ic_africa));
-        imageViews.add(new ImageView(R.drawable.ic_asia));
-        imageViews.add(new ImageView(R.drawable.ic_australia));
-        imageViews.add(new ImageView(R.drawable.ic_europe));
-        imageViews.add(new ImageView(R.drawable.ic_north_america));
-        imageViews.add(new ImageView(R.drawable.ic_south_america));
+        imageViews.add(new ImageView(R.drawable.ic_africa,1));
+        imageViews.add(new ImageView(R.drawable.ic_asia,2));
+        imageViews.add(new ImageView(R.drawable.ic_australia,3));
+        imageViews.add(new ImageView(R.drawable.ic_europe,4));
+        imageViews.add(new ImageView(R.drawable.ic_north_america,5));
+        imageViews.add(new ImageView(R.drawable.ic_south_america,6));
 
     }
     @Override
     public void onClick(ImageView imageView) {
         Bundle bundle = new Bundle();
-        bundle.putInt(getString(KEY_INTENT, imageView.getKeyId());
+        //bundle.putInt(getString(KEY_INTENT, imageView.getKeyId());
+        bundle.putInt("key",imageView.getKeyId());
         Fragment fragment = new CountryFragment();
         fragment.setArguments(bundle);
         requireActivity().getSupportFragmentManager().beginTransaction().

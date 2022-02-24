@@ -6,6 +6,10 @@ public class ImageView implements Serializable {
     private int continent,country;
     private Integer keyId;
 
+    public ImageView(int image,Integer keyId) {
+        this.continent=image;
+        this.keyId = keyId;
+    }
     public ImageView(int image) {
         this.continent=image;
     }
@@ -25,6 +29,7 @@ public class ImageView implements Serializable {
     public void setCountry(int country) {
         this.country = country;
     }
+
 
     public Integer getKeyId() {
         return keyId;

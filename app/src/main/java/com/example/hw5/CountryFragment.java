@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.security.Key;
 import java.util.ArrayList;
 
 public class CountryFragment extends Fragment implements OnClickListener{
@@ -34,6 +35,7 @@ public class CountryFragment extends Fragment implements OnClickListener{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         LoadData();
+        recyclerView = view.findViewById(R.id.recycler_country);
         countryAdapter = new CountryAdapter(imageViews, this::onClick);
         recyclerView.setAdapter(countryAdapter);
 
@@ -46,7 +48,8 @@ public class CountryFragment extends Fragment implements OnClickListener{
     private void LoadData() {
         imageViews=new ArrayList<>();
         Bundle bundle = getArguments();
-        Integer val = bundle.getInt(getString(Integer.parseInt("key")));
+        //Integer val = bundle.getInt(getString(Integer.parseInt("key")));
+        Integer val =bundle.getInt("key");
         //Africa
         switch (val) {
             case 1:
